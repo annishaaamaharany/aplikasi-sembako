@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/style1.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="manifest" href="manifest.json">
+  <title>Aplikasi Sembako</title>
+</head>
+
+<body>
+  <div id="splash-screen">
+    <img src="assets/image/12.jpg" alt="Splash Screen" />
+  </div>
+  
+  <header>
+    <div id="header-container">
+      <img src="assets/image/header.jpg" alt="Deskripsi Gambar" id="Gheader">
+      <input type="search" id="cari" placeholder="Cari Produk..." />
+    </div>
+  </header>
+
+  <section class="products" id="products">
+    <form target="daftar-penyewa">
+      <h3>Popular Kategori </h3>
+      <div class="products-container">
+        <div class="box">
+          <img src="assets/image/snack.jpg" alt="snack" />
+          <h2>Snack</h2>
+          <button type="button" class="teks-item-link">Click For More</button>
+        </div>
+
+        <div class="box" harga="20000">
+          <img src="assets/image/carbss.jpg" alt="carbs" />
+          <h2>Carbs</h2>
+          <button type="button" class="teks-item-link">Click For More</button>
+        </div>
+
+        <div class="box">
+          <img src="assets/image/drink.jpg" alt="drink" />
+          <h2>Drinks</h2>
+          <button type="button" class="teks-item-link">Click For More</button>
+        </div>
+
+        <div class="box" harga="25000">
+          <img src="assets/image/flavoring.jpg" alt="Flavoring" />
+          <h2>Flavoring</h2>
+          <button type="button" class="teks-item-link">Click For More</button>
+        </div>
+
+        <div class="box">
+          <img src="assets/image/vg.jpg" alt="cs" />
+          <h2>Coming soon !!</h2>
+        </div>
+
+        <div class="box">
+          <img src="assets/image/cs.jpg" alt="soon" />
+          <h2>Coming soon !!</h2>
+        </div>
+      </div>
+      <br />
+    </form>
+  </section>
+
+  <h3 id="drinks">Our Product </h3><br>
+  <h4>Drinks </h4>
+  <div class="products-container">
+    <div class="box" harga="25000">
+      <img src="assets/image/drink1.jpg" alt="carbs" />
+      <h2>Banana Milk</h2>
+      <h3 class="price">Rp 25.000</h3>
+      <br />
+      <button type="button" class="teks-item-link-buy">Buy</button>
+    </div>
+
+    <div class="box" harga="35000">
+      <img src="assets/image/sw.jpg" alt="sw" />
+      <h2>Strawberry Milk</h2>
+      <h3 class="price">Rp 35.000</h3>
+      <br />
+      <button type="button" class="teks-item-link-buy">Buy</button>
+    </div>
+    <div class="box" harga="35000">
+      <img src="assets/image/yg.jpg" alt="yg" />
+      <h2>Yoghurt</h2>
+      <h3 class="price">Rp 25.000</h3>
+      <br />
+      <button type="button" class="teks-item-link-buy">Buy</button>
+    </div>
+
+
+
+
+
+  </div>
+  <br>
+  <h4 id="snack">Snack </h4>
+  <div class="products-container">
+    <div class="box" harga="15000">
+      <img src="assets/image/pie.jpg" alt="pie" />
+      <h2>Choco Pie</h2>
+      <h3 class="price">Rp 15.000</h3>
+      <br />
+      <button type="button" class="teks-item-link-buy">Buy</button>
+    </div>
+    
+    <div class="box" harga="15000">
+      <img src="assets/image/pky.jpg" alt="pky" />
+      <h2>Pocky</h2>
+      <h3 class="price">Rp 20.000</h3>
+      <br />
+      <button type="button" class="teks-item-link-buy">Buy</button>
+    </div>
+
+
+
+
+    <div class="box" harga="10000">
+      <img src="assets/image/snack1.jpg" alt="ct" />
+      <h2>Chitato</h2>
+      <h3 class="price">Rp 10.000</h3>
+      <br />
+      <button type="button" class="teks-item-link-buy">Buy</button>
+    </div>
+  </div>
+
+  <div id="formPembayaran" style="display: none;">
+    <h3>Form pembelian</h3>
+    <form>
+      <label for="produk">Produk:</label>
+      <input type="text" id="produk" name="produk" readonly>
+      <br>
+      <label for="harga">Harga:</label>
+      <input type="text" id="harga" name="harga" readonly>
+      <br>
+      <label for="jumlah">Jumlah:</label>
+      <input type="text" id="jumlah" name="jumlah" required>
+      <br>
+
+      <button onclick="bayar()">Bayar</button>
+      <br>
+      <h3 class="riwayat">transaksi pembayaran</h3>
+      <table id="riwayat" border="1"></table>
+    </form>
+  </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(function (registration) {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(function (error) {
+                console.log('Service Worker registration failed:', error);
+            });
+    }
+</script>
+
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/register.js"></script>
+</body>
+
+</html>
